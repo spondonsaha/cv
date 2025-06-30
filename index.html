@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spondon Saha | Cybersecurity Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .animate-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .certification-logo {
+            filter: grayscale(100%) brightness(0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .certification-logo:hover {
+            filter: grayscale(0%) brightness(1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .blog-card:hover {
+            background-color: #1e293b;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">
+                    <span class="text-blue-400">S</span>pondon <span class="text-blue-400">S</span>aha
+                </a>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white transition">About</a>
+                    
+                    <a href="#certifications" class="nav-link text-gray-300 hover:text-white transition">Certifications</a>
+                    <a href="#blog" class="nav-link text-gray-300 hover:text-white transition">Work</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#home" class="text-gray-300 hover:text-white transition">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                
+                <a href="#certifications" class="text-gray-300 hover:text-white transition">Certifications</a>
+                <a href="#blog" class="text-gray-300 hover:text-white transition">Blog</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span class="text-blue-400">Cybersecurity</span> Researcher <br>
+                        & <span class="text-blue-400">Bug Bounty</span> Hunter
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        I identify vulnerabilities, secure systems, and share knowledge to make the digital world safer.
+                        Specializing in web application security, penetration testing, and security research.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Get In Touch
+                        </a>
+                        <a href="#blog" class="border border-blue-500 text-blue-400 hover:bg-blue-500/10 px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-in delay-100">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                        <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+                        <div class="relative w-full h-full bg-slate-800 rounded-full overflow-hidden border-4 border-blue-500/30">
+                            <!-- Placeholder for profile image -->
+                            <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                <i class="fas fa-user-secret text-8xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center animate-in">
+                <span class="text-blue-400">About</span> Me
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 animate-in delay-100">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">Who I Am</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        I'm Spondon Saha, a passionate cybersecurity professional with expertise in identifying and mitigating security vulnerabilities. 
+                        With a strong foundation in ethical hacking and network security, I specialize in web application penetration testing 
+                        and vulnerability research.
+                    </p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        My journey in cybersecurity began with a deep curiosity about how systems work and how they can be broken. 
+                        This led me to pursue certifications and hands-on experience in bug bounty programs, where I've successfully 
+                        identified critical vulnerabilities in various web applications.
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        When I'm not hunting for bugs, I enjoy sharing my knowledge through blog posts and research papers, 
+                        contributing to the cybersecurity community's collective knowledge.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="CV_Spondon.pdf" class="bg-blue-500/10 text-blue-400 px-4 py-2 rounded-lg border border-blue-500/30 hover:bg-blue-500/20 transition">
+                            <i class="fas fa-download mr-2"></i> Download Resume
+                        </a>
+                        <a href="#contact" class="bg-slate-800 text-gray-300 px-4 py-2 rounded-lg border border-slate-700 hover:bg-slate-700 transition">
+                            <i class="fas fa-envelope mr-2"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 animate-in delay-200">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">My Skills</h3>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-medium mb-4 text-gray-300">Technical Skills</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Penetration Testing</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Web App Security</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Network Security</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Vulnerability Research</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Django</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">OWASP Top 10</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Burp Suite</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Nmap</span>
+                            <span class="bg-slate-800 text-gray-300 px-3 py-1 rounded-full text-sm">Metasploit</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-medium mb-4 text-gray-300">Tools & Technologies</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <div class="flex items-center bg-slate-800/50 p-3 rounded-lg">
+                                <i class="fas fa-shield-alt text-blue-400 mr-3"></i>
+                                <span class="text-gray-300">Burp Suite</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800/50 p-3 rounded-lg">
+                                <i class="fab fa-python text-blue-400 mr-3"></i>
+                                <span class="text-gray-300">Python</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800/50 p-3 rounded-lg">
+                                <i class="fas fa-network-wired text-blue-400 mr-3"></i>
+                                <span class="text-gray-300">Nmap</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800/50 p-3 rounded-lg">
+                                <i class="fas fa-terminal text-blue-400 mr-3"></i>
+                                <span class="text-gray-300">Metasploit</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800/50 p-3 rounded-lg">
+                                <i class="fas fa-lock text-blue-400 mr-3"></i>
+                                <span class="text-gray-300">OWASP ZAP</span>
+                            </div>
+                            <div class="flex items-center bg-slate-800/50 p-3 rounded-lg">
+                                <i class="fab fa-linux text-blue-400 mr-3"></i>
+                                <span class="text-gray-300">Kali Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section 
+    <section id="projects" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center animate-in">
+                My <span class="text-blue-400">Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 
+                <div class="card-gradient rounded-xl p-6 transition duration-300 project-card animate-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fas fa-bug text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">XSS Vulnerability Research</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Comprehensive research on Cross-Site Scripting (XSS) vulnerabilities, including novel exploitation techniques and mitigation strategies.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">XSS</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Web Security</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Research</span>
+                    </div>
+                    <a href="CV_Spondon.pdf" class="text-blue-400 hover:text-blue-300 flex items-center transition">
+                        Read Writeup <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project 2 
+                <div class="card-gradient rounded-xl p-6 transition duration-300 project-card animate-in delay-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fas fa-file-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Cyber Awareness in Bangladesh</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Research paper analyzing the current state of cybersecurity awareness in Bangladesh with recommendations for improvement.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Research</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Cybersecurity</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Bangladesh</span>
+                    </div>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center transition">
+                        View Paper <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project 3 
+                <div class="card-gradient rounded-xl p-6 transition duration-300 project-card animate-in delay-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fab fa-python text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Vulnerability Scanner</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Python-based web vulnerability scanner that automates detection of common security issues in web applications.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Automation</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Security</span>
+                    </div>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center transition">
+                        View Code <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project 4 
+                <div class="card-gradient rounded-xl p-6 transition duration-300 project-card animate-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Secure Django Auth System</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Django-based authentication system with enhanced security features including rate limiting and suspicious activity detection.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Django</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Authentication</span>
+                    </div>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center transition">
+                        View Project <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project 5
+                <div class="card-gradient rounded-xl p-6 transition duration-300 project-card animate-in delay-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fas fa-search text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Bug Bounty Findings</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Collection of verified bug bounty reports with detailed writeups on vulnerabilities found in various programs.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Bug Bounty</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Vulnerabilities</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Writeups</span>
+                    </div>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center transition">
+                        View Reports <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project 6
+                <div class="card-gradient rounded-xl p-6 transition duration-300 project-card animate-in delay-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fas fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Network Security Analysis</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Research on common network security vulnerabilities and development of a framework for automated network hardening.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Network</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Security</span>
+                        <span class="bg-slate-800 text-gray-300 px-2 py-1 rounded-full text-xs">Automation</span>
+                    </div>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center transition">
+                        View Research <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center animate-in">
+                My <span class="text-blue-400">Certifications</span>
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- CEH -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/cretiveit.png" alt="CEH" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Certified Ethical Hacker</h3>
+                    <p class="text-gray-400 text-sm mb-4">Creative It Institute</p>
+                    <a href="https://certificate.citsmp.com/?certificate_id=CEH-23040217" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- Cisco NetAcad -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in delay-100">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/Ethical_hacker.png" alt="Cisco NetAcad" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Ethical Hacker</h3>
+                    <p class="text-gray-400 text-sm mb-4">Cisco Network Academy</p>
+                    <a href="https://www.credly.com/badges/67f46512-7cc0-40ba-8bb1-7c229ca8cd74/email" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- CompTIA Security+ -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in delay-200">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/nactar2.jpeg" alt="Security+" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Programming in Python</h3>
+                    <p class="text-gray-400 text-sm mb-4">National Academy Center And Research(NACTAR)</p>
+                    <a href="https://nactar.gov.bd/" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- OSCP -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in delay-300">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/network_basic.png" alt="OSCP" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Networking Basics</h3>
+                    <p class="text-gray-400 text-sm mb-4">Cisco Network Academy</p>
+                    <a href="https://www.credly.com/badges/19bd3099-ea2b-45bb-8bc8-1f233638b864/public_url" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- eJPT -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/Initial_config.png" alt="eJPT" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Networking Device and Initial Configuration</h3>
+                    <p class="text-gray-400 text-sm mb-4">Cisco Network Academy</p>
+                    <a href="https://www.credly.com/badges/d5370cdd-6de1-4c19-9bef-406a21a5204c/public_url" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- TryHackMe -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in delay-100">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/linux.png" alt="TryHackMe" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Linux Operating System</h3>
+                    <p class="text-gray-400 text-sm mb-4">StudySection</p>
+                    <a href="https://www.studysection.com/verify-certificate-authenticity" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- HackTheBox -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in delay-200">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/CCNA.png" alt="HackTheBox" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Cisco Certified Network Association(Ongoing)</h3>
+                    <p class="text-gray-400 text-sm mb-4">National Academy Center For Training And Research</p>
+                    <a href="https://www.credly.com/badges/7a27d7d0-6d24-4dd0-a052-d63b4741b9df" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+                
+                <!-- Bugcrowd -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center text-center animate-in delay-300">
+                    <div class="w-20 h-20 mb-4 certification-logo">
+                        <img src="images/cisco.jpeg" alt="Bugcrowd" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Cisco Network Security(Planned)</h3>
+                    <p class="text-gray-400 text-sm mb-4">National Academy Center For Training And Research</p>
+                    <a href="https://www.netacad.com/courses/network-security?courseLang=en-US" class="text-blue-400 text-sm hover:text-blue-300 transition">Verify Credential</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center animate-in">
+                My <span class="text-blue-400">Work</span> experience
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition duration-300 blog-card animate-in">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img src="images/proof1.png" alt="Your Image" class="h-48 w-auto">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">IDOR</span>
+                            <span class="text-gray-500 text-sm ml-auto">May 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">IDOR Vulnerability Found </h3>
+                        <p class="text-gray-300 mb-4">
+                           I’ve identified a critical IDOR vulnerability in your University Management System(IEMS) that exposes sensitive payment records across all users.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition duration-300 blog-card animate-in delay-100">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img src="images/proof2.png" alt="Your Image" class="h-48 w-auto">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Pentesting</span>
+                            <span class="text-gray-500 text-sm ml-auto">April 28, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3"> 2FA Bypass identified</h3>
+                        <p class="text-gray-300 mb-4">
+                           I have found a security issue on a website related to Two-Factor Authentication (2FA).That was a great experince working with them.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition duration-300 blog-card animate-in delay-200">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img src="images/proof3.png" alt="Your Image" class="h-48 w-auto">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Vulnerabilities</span>
+                            <span class="text-gray-500 text-sm ml-auto">April 10, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Cross-Site Scripting (XSS)</h3>
+                        <p class="text-gray-300 mb-4">
+                            I have identified a reflected Cross-Site Scripting(XSS) vulnerability on a repouted Website of Uk.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-in delay-300">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-500/10 transition">
+                    View All Posts <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center animate-in">
+                Get In <span class="text-blue-400">Touch</span>
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 animate-in">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">Contact Form</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Regarding a security consultation">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2 animate-in delay-100">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">Contact Information</h3>
+                    <p class="text-gray-300 mb-8">
+                        Feel free to reach out for collaborations, security consultations, or just to say hello. 
+                        I'm always interested in discussing new projects and opportunities.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/10 p-3 rounded-lg mr-4 text-blue-400">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-300 mb-1">Email</h4>
+                                <a href="mailto:workspondon@gmail.com" class="text-gray-400 hover:text-blue-400 transition">workspondon@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/10 p-3 rounded-lg mr-4 text-blue-400">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-300 mb-1">LinkedIn</h4>
+                                <a href="https://linkedin.com/in/spondonsaha" target="_blank" class="text-gray-400 hover:text-blue-400 transition">linkedin.com/in/spondonsaha</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/10 p-3 rounded-lg mr-4 text-blue-400">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-300 mb-1">GitHub</h4>
+                                <a href="https://github.com/spondonsaha" target="_blank" class="text-gray-400 hover:text-blue-400 transition">github.com/spondonsaha</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-500/10 p-3 rounded-lg mr-4 text-blue-400">
+                                <i class="fas fa-bug text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-300 mb-1">Bug Bounty Profile</h4>
+                                <a href="https://firebounty.com/spondon" target="_blank" class="text-gray-400 hover:text-blue-400 transition">firebounty.com/spondon</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="text-lg font-medium text-gray-300 mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/share/1Ei1sHZtCz/" class="bg-slate-800 w-12 h-12 rounded-full flex items-center justify-center text-gray-300 hover:text-blue-400 hover:bg-slate-700 transition">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/spondonsaha/" class="bg-slate-800 w-12 h-12 rounded-full flex items-center justify-center text-gray-300 hover:text-blue-400 hover:bg-slate-700 transition">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://github.com/spondonsaha" class="bg-slate-800 w-12 h-12 rounded-full flex items-center justify-center text-gray-300 hover:text-blue-400 hover:bg-slate-700 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">
+                        <span class="text-blue-400">S</span>pondon <span class="text-blue-400">S</span>aha
+                    </a>
+                    <p class="text-gray-400 mt-2">Cybersecurity Researcher & Bug Bounty Hunter</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="https://github.com/spondonsaha" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/spondonsaha/" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1Ei1sHZtCz/ " class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-500 text-sm">© 2023 Spondon Saha. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initially hide animated elements
+        document.querySelectorAll('.animate-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Spondon34/spondonsaha" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
