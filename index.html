@@ -94,6 +94,86 @@
             background-color: #1e293b;
         }
         
+         .awards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .award-card {
+      background: #1e293b; /* slightly lighter navy */
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .award-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.6);
+      border-color: #facc15;
+    }
+
+    .award-card img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+    .award-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
+    }
+    .award-card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      top:0; left:0;
+      width:100%;
+      height:100%;
+      background: rgba(15,23,42,0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+      /* Responsive */
+    @media(max-width: 500px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .award-card {
+        padding: 1rem;
+      }
+      .award-card img {
+        height: 180px;
+      }
+    }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -129,10 +209,11 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-gray-300 hover:text-white transition">Home</a>
                     <a href="#about" class="nav-link text-gray-300 hover:text-white transition">About</a>
-                    
+                    <a href="#awards" class="nav-link text-gray-300 hover:text-white transition">Awards</a>
                     <a href="#certifications" class="nav-link text-gray-300 hover:text-white transition">Certifications</a>
                     <a href="#blog" class="nav-link text-gray-300 hover:text-white transition">Work</a>
                     <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                     
                 </nav>
             </div>
         </div>
@@ -430,6 +511,72 @@
            
         </div>
     </section>
+
+<!--Award Section-->
+    <section id="awards" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center animate-in">
+                Awards <span class="text-blue-400">And</span> Recognitions
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition duration-300 blog-card animate-in">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img src="drexel.jpg" alt="Your Image" class="h-48 w-auto">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">IDOR</span>
+                            <span class="text-gray-500 text-sm ml-auto">Jan 05, 2026</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Drexel University </h3>
+                        <p class="text-gray-300 mb-4">
+                    Appreciated by Drexel University for my contributions and achievement</p>
+                    <p>HOF: <a href=https://drexel.edu/it/security/services-processes/bug-bounty/>Drexel Edu</a></p>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition duration-300 blog-card animate-in delay-100">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img src="nasa.jpg" alt="Your Image" class="h-48 w-auto">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Pentesting</span>
+                            <span class="text-gray-500 text-sm ml-auto">Nov 13, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3"> National Aeronautics and Space Administration(NASA)</h3>
+                        <p class="text-gray-300 mb-4">
+                           Honored by NASA for my contributions and achievements, highlighting my commitment to excellence and innovation.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition duration-300 blog-card animate-in delay-200">
+                    <div class="h-48 bg-slate-700 flex items-center justify-center">
+                        <img src="pcb_bug.jpeg" alt="Your Image" class="h-48 w-auto">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Competition</span>
+                            <span class="text-gray-500 text-sm ml-auto">Jan 16, 2026</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">PC Builder Bangladesh</h3>
+                        <p class="text-gray-300 mb-4">
+                            Winner of the Major Category in the PC Builder Bangladesh Bug Hunt Competition.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+    </section>
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-slate-900 border-t border-slate-800">
